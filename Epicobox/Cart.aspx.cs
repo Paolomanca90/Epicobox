@@ -34,7 +34,7 @@ namespace Epicobox
             int rowIndex = Convert.ToInt32(btnElimina.CommandArgument);
             foreach (Prodotto prodotto in carrello)
             {
-                if (prodotto.Id == rowIndex)
+                if (prodotto.IdEsperienza == rowIndex)
                 {
                     carrello.Remove(prodotto);
                     Session["Carrello"] = carrello;
