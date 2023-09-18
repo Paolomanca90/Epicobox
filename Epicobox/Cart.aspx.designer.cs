@@ -15,13 +15,13 @@ namespace Epicobox
     {
 
         /// <summary>
-        /// Controllo Cart.
+        /// Controllo Cart1.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Cart;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Cart1;
 
         /// <summary>
         /// Controllo GridViewCarrello.
