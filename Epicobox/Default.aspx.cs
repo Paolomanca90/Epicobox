@@ -16,7 +16,7 @@ namespace Epicobox
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionDB"].ConnectionString.ToString();
             SqlConnection conn = new SqlConnection(connectionString);
 
-            SqlCommand cmd = new SqlCommand("select * from Esperienze" , conn);
+            SqlCommand cmd = new SqlCommand("select Nome, DescrizioneBreve, Prezzo, ImageBox, NomeLocation from Esperienze INNER JOIN Location ON Esperienze.Location = Location.IdLocation" , conn);
             SqlDataReader sqlDataReader;
 
             conn.Open();
@@ -27,8 +27,8 @@ namespace Epicobox
             while (sqlDataReader.Read())
             {
                 Prodotto esperienza = new Prodotto();
-                esperienza.IdEsperienza = Convert.ToInt32(sqlDataReader["IdEsperienza"]);
                 esperienza.Nome = sqlDataReader["Nome"].ToString();
+                esperienza.Location = sqlDataReader["NomeLocation"].ToString();
                 esperienza.DescrizioneBreve = sqlDataReader["DescrizioneBreve"].ToString();
                 esperienza.Prezzo = Convert.ToDecimal(sqlDataReader["Prezzo"]);
                 esperienza.ImageBox = sqlDataReader["ImageBox"].ToString();
@@ -50,13 +50,13 @@ namespace Epicobox
         public string ImageBox { get; set; }
         public DateTime DataInizio { get; set; }
         public DateTime DataFine { get; set; }
-        public int Location { get; set; }
-        public int Categoria { get; set; }
+        public string Location { get; set; }
+        public string Categoria { get; set; }
         public string Image1 { get; set; }
         public string Image2 { get; set; }
         public string Image3 { get; set; }
         public Prodotto() { }
-        public Prodotto(int id,string nome, string descrizioneBreve, string descrizioneCompleta, decimal prezzo, string image, int location, int categoria, DateTime dataInizio, DateTime dataFine, string image1, string image2, string image3)
+        public Prodotto(int id,string nome, string descrizioneBreve, string descrizioneCompleta, decimal prezzo, string image, string location, string categoria, DateTime dataInizio, DateTime dataFine, string image1, string image2, string image3)
         {
             IdEsperienza = id;
             Nome = nome;

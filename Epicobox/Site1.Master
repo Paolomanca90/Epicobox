@@ -50,7 +50,7 @@
                             </li>
 
                             <li class="nav-link">
-                                <a href="#">
+                                <a href="Cart.aspx">
                                     <i class='bx bx-cart icon'></i>
                                     <span class="text nav-text">Carrello</span>
                                 </a>
