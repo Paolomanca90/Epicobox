@@ -18,7 +18,7 @@ namespace Epicobox
                 carrello = Session["Carrello"] as List<Prodotto>;
                 GridViewCarrello.DataSource = carrello;
                 GridViewCarrello.DataBind();
-                Cart.Controls.Add(GridViewCarrello);
+                Cart1.Controls.Add(GridViewCarrello);
                 foreach (Prodotto prodotto in carrello)
                 {
                     totale += prodotto.Prezzo;

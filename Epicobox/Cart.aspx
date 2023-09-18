@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div runat="server" id="Cart" class="w-75 mx-auto p-4">
+        <div runat="server" id="Cart1" class="w-75 mx-auto p-4">
         <h2>Riepilogo del carrello</h2>
         <asp:GridView class="table table-success" ID="GridViewCarrello" runat="server" AutoGenerateColumns="false" ItemType="Epicobox.Prodotto">
             <Columns>
@@ -41,7 +41,7 @@
                         <strong>Elimina</strong>
                     </HeaderTemplate>
                     <ItemTemplate>
-                        <asp:LinkButton ID="btnElimina" runat="server" Text='<i class="bi bi-trash-fill text-danger"></i>' onclick="btnElimina_Click" CommandArgument='<%# Item.Id %>' />
+                        <asp:LinkButton ID="btnElimina" runat="server" Text='<i class="bi bi-trash-fill text-danger"></i>' onclick="btnElimina_Click" CommandArgument='<%# Item.IdEsperienza %>' />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
