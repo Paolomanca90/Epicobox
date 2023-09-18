@@ -47,7 +47,7 @@
             </Columns>
         </asp:GridView>
         <div class="d-flex justify-content-between py-3">
-            <h4>Totale <span runat="server" id="totaleCarrello">0,00 €</span></h4>
+            <h4>Totale <span runat="server" id="totaleCarrello">€ 0,00</span></h4>
             <asp:Button class="btn btn-outline-secondary" ID="Button1" runat="server" Text="svuota carrello" OnClick="Button1_Click" />
         </div>      
     </div>

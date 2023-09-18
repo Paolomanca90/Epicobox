@@ -84,9 +84,6 @@
 
             </nav>
 
-            <section class="home">
-                <div class="text">Benvenuto in Gift Xperience</div>
-            </section>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
