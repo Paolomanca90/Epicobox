@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,7 +13,30 @@ namespace Epicobox
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionDB"].ConnectionString.ToString();
+            SqlConnection conn = new SqlConnection(connectionString);
 
+            SqlCommand cmd = new SqlCommand("select * from Esperienze" , conn);
+            SqlDataReader sqlDataReader;
+
+            conn.Open();
+
+            List<Prodotto > esperienze = new List<Prodotto>();
+            sqlDataReader = cmd.ExecuteReader();
+
+            while (sqlDataReader.Read())
+            {
+                Prodotto esperienza = new Prodotto();
+                esperienza.IdEsperienza = Convert.ToInt32(sqlDataReader["IdEsperienza"]);
+                esperienza.Nome = sqlDataReader["Nome"].ToString();
+                esperienza.DescrizioneBreve = sqlDataReader["DescrizioneBreve"].ToString();
+                esperienza.Prezzo = Convert.ToDecimal(sqlDataReader["Prezzo"]);
+                esperienza.ImageBox = sqlDataReader["ImageBox"].ToString();
+                esperienze.Add(esperienza);
+
+            }
+            Repeater1.DataSource = esperienze;
+            Repeater1.DataBind();
         }
     }
 
