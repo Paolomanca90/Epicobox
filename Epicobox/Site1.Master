@@ -4,8 +4,11 @@
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap'>
+    <link href="Content/style.css" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -13,36 +16,109 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <nav class="navbar navbar-expand-lg bg-primary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="Default.aspx">
-                        <img src="" alt="logo" />
-                    </a>
-                    <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon text-light"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active text-light" aria-current="page" href="Default.aspx">Home</a>
+            <nav class="sidebar close">
+                <header>
+                    <div class="image-text">
+                        <span class="image">
+                            <img src="Content/Img/logo.jpeg" alt="logo">
+                        </span>
+
+                        <div class="text logo-text">
+                            <span class="name">Gift Xperience</span>
+                            <span class="profession">Goditi il tuo tempo</span>
+                        </div>
+                    </div>
+
+                    <i class='bx bx-chevron-right toggle'></i>
+                </header>
+
+                <div class="menu-bar">
+                    <div class="menu">
+
+                        <li class="search-box">
+                            <i class='bx bx-search icon'></i>
+                            <input type="text" placeholder="Search...">
+                        </li>
+
+                        <ul class="menu-links">
+                            <li class="nav-link">
+                                <a href="#">
+                                    <i class='bx bx-home-alt icon'></i>
+                                    <span class="text nav-text">Dashboard</span>
+                                </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="#">Carrello PROVAAAAA</a>
+
+                            <li class="nav-link">
+                                <a href="#">
+                                    <i class='bx bx-bar-chart-alt-2 icon'></i>
+                                    <span class="text nav-text">Revenue</span>
+                                </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="#">Admin</a>
+
+                            <li class="nav-link">
+                                <a href="#">
+                                    <i class='bx bx-bell icon'></i>
+                                    <span class="text nav-text">Notifications</span>
+                                </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="#">Login</a>
-                            </li>  
+
+                            <li class="nav-link">
+                                <a href="#">
+                                    <i class='bx bx-pie-chart-alt icon'></i>
+                                    <span class="text nav-text">Analytics</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link">
+                                <a href="#">
+                                    <i class='bx bx-heart icon'></i>
+                                    <span class="text nav-text">Likes</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link">
+                                <a href="#">
+                                    <i class='bx bx-wallet icon'></i>
+                                    <span class="text nav-text">Wallets</span>
+                                </a>
+                            </li>
+
                         </ul>
                     </div>
+
+                    <div class="bottom-content">
+                        <li class="">
+                            <a href="#">
+                                <i class='bx bx-log-out icon'></i>
+                                <span class="text nav-text">Logout</span>
+                            </a>
+                        </li>
+
+                        <li class="mode">
+                            <div class="sun-moon">
+                                <i class='bx bx-moon icon moon'></i>
+                                <i class='bx bx-sun icon sun'></i>
+                            </div>
+                            <span class="mode-text text">Dark mode</span>
+
+                            <div class="toggle-switch">
+                                <span class="switch"></span>
+                            </div>
+                        </li>
+
+                    </div>
                 </div>
+
             </nav>
+
+            <section class="home">
+                <div class="text">Dashboard Sidebar</div>
+            </section>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    <script src="Scripts/script.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
 </body>
 </html>
