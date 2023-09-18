@@ -20,7 +20,7 @@
                 <header>
                     <div class="image-text">
                         <span class="image">
-                            <img src="Content/Img/logo.jpeg" alt="logo">
+                            <img src="Content/Img/logo.jpeg" alt="logo"> 
                         </span>
 
                         <div class="text logo-text">
@@ -37,49 +37,21 @@
 
                         <li class="search-box">
                             <i class='bx bx-search icon'></i>
-                            <input type="text" placeholder="Search...">
+                            <input type="text" placeholder="Cerca...">
                         </li>
 
-                        <ul class="menu-links">
+                        <ul class="menu-links p-0">
                             <li class="nav-link">
-                                <a href="#">
+                                <a href="Default.aspx">
                                     <i class='bx bx-home-alt icon'></i>
-                                    <span class="text nav-text">Dashboard</span>
-                                </a>
-                            </li>
-
-                            <li class="nav-link">
-                                <a href="#">
-                                    <i class='bx bx-bar-chart-alt-2 icon'></i>
-                                    <span class="text nav-text">Revenue</span>
-                                </a>
-                            </li>
-
-                            <li class="nav-link">
-                                <a href="#">
-                                    <i class='bx bx-bell icon'></i>
-                                    <span class="text nav-text">Notifications</span>
-                                </a>
-                            </li>
-
-                            <li class="nav-link">
-                                <a href="#">
-                                    <i class='bx bx-pie-chart-alt icon'></i>
-                                    <span class="text nav-text">Analytics</span>
-                                </a>
-                            </li>
-
-                            <li class="nav-link">
-                                <a href="#">
-                                    <i class='bx bx-heart icon'></i>
-                                    <span class="text nav-text">Likes</span>
+                                    <span class="text nav-text">Home</span>
                                 </a>
                             </li>
 
                             <li class="nav-link">
                                 <a href="#">
                                     <i class='bx bx-wallet icon'></i>
-                                    <span class="text nav-text">Wallets</span>
+                                    <span class="text nav-text">Carrello</span>
                                 </a>
                             </li>
 
@@ -88,7 +60,7 @@
 
                     <div class="bottom-content">
                         <li class="">
-                            <a href="#">
+                            <a href="Login.aspx">
                                 <i class='bx bx-log-out icon'></i>
                                 <span class="text nav-text">Logout</span>
                             </a>
@@ -112,7 +84,7 @@
             </nav>
 
             <section class="home">
-                <div class="text">Dashboard Sidebar</div>
+                <div class="text">Benvenuto in Gift Xperience</div>
             </section>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
