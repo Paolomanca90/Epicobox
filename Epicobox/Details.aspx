@@ -14,7 +14,6 @@
         <p id="location" runat="server"></p>
         <p id="categoria" runat="server"></p>
     </div>
-
     <div>
         <div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">

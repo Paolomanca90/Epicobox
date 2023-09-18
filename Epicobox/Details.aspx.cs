@@ -35,9 +35,9 @@ namespace Epicobox
                     location.InnerHtml = $"{sqlreader["Location"]}";
                     categoria.InnerHtml = $"{sqlreader["Categoria"]}";
                     imageBox.ImageUrl = $"{sqlreader["ImageBox"]}";
-                    image1.ImageUrl = $"{sqlreader["ImageBox"]}";
-                    image2.ImageUrl = $"{sqlreader["ImageBox"]}";
-                    image3.ImageUrl = $"{sqlreader["ImageBox"]}";
+                    image1.ImageUrl = $"{sqlreader["Image1"]}";
+                    image2.ImageUrl = $"{sqlreader["Image2"]}";
+                    image3.ImageUrl = $"{sqlreader["Image3"]}";
             }
 
             conn.Close();
