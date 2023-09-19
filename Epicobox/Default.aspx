@@ -6,8 +6,18 @@
     
     
     <section class="home">
-        <div class="text">Benvenuto in Gift Xperience</div>
-
+        <section class="banner mt-2">
+            <video src="Content/Video/smoke.mp4" autoplay muted ></video>
+            <h4>
+                <span>G</span>
+                <span>I</span>
+                <span>F</span>
+                <span>T</span>
+                <span>-</span>
+                <span>X</span>
+            </h4>
+        </section>
+        <div class="text">Scegli la tua Xperience</div>
         <div class="container-fluid">
             <div class="row gap-2 justify-content-evenly ">
                 <asp:Repeater ID="Repeater1" runat="server" ItemType="Epicobox.Prodotto">
