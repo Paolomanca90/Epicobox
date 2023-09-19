@@ -15,37 +15,31 @@ namespace Epicobox
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
                 string connection = ConfigurationManager.ConnectionStrings["ConnectionDB"]
                 .ConnectionString.ToString();
 
                 SqlConnection conn = new SqlConnection(connection);
                 SqlCommand cmd = new SqlCommand("select * from Esperienze where IdEsperienza=@id", conn);
-                cmd.Parameters.AddWithValue("id", Request.QueryString["IdProdotto"]);
+                cmd.Parameters.AddWithValue("id", Request.QueryString["IdEsperienza"]);
                 conn.Open();
                 SqlDataReader sqlreader;
                 sqlreader = cmd.ExecuteReader();
                 while (sqlreader.Read())
                 {
-                    Nome.InnerHtml = $"{sqlreader["Nome"]}";
-                    Prezzo.InnerHtml = $"{sqlreader["Prezzo"]}";
-                    DescrizioneLunga.InnerHtml = $"{sqlreader["DescrizioneLunga"]}";
-                    dataInizio.InnerHtml = $"{sqlreader["DataInizio"]}";
-                    dataFine.InnerHtml = $"{sqlreader["DataFine"]}";
-                    location.InnerHtml = $"{sqlreader["Location"]}";
-                    categoria.InnerHtml = $"{sqlreader["Categoria"]}";
-                    imageBox.ImageUrl = $"{sqlreader["ImageBox"]}";
-                    image1.ImageUrl = $"{sqlreader["ImageBox"]}";
-                    image2.ImageUrl = $"{sqlreader["ImageBox"]}";
-                    image3.ImageUrl = $"{sqlreader["ImageBox"]}";
-            }
+                    Nome.InnerHtml = sqlreader["Nome"].ToString();
+                    Prezzo.InnerHtml = sqlreader["Prezzo"].ToString();
+                    DescrizioneLunga.InnerHtml = sqlreader["DescrizioneLunga"].ToString();
+                    dataInizio.InnerHtml = sqlreader["DataInizio"].ToString();
+                    dataFine.InnerHtml = sqlreader["DataFine"].ToString();
+                    location.InnerHtml = sqlreader["Location"].ToString();
+                    categoria.InnerHtml = sqlreader["Categoria"].ToString();
+                    imageBox.ImageUrl = sqlreader["ImageBox"].ToString();
+                    image1.ImageUrl = sqlreader["Image1"].ToString();
+                    image2.ImageUrl = sqlreader["Image2"].ToString();
+                    image3.ImageUrl = sqlreader["Image3"].ToString();
+                }
 
-            conn.Close();
-            
-
-
-
-
+                conn.Close();
         }
     }
 }
