@@ -3,9 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="../Content/bootstrap.min.css"/>
-    <div class="container">
+  <div class="container">
        
-     <div class="mb-3">
+     <div class="mb-3 d-flex flex-column">
         <asp:Label for="nomeEsperienza" runat="server" class="form-label">Inserisci il nome dell'Esperienza</asp:Label>
         <asp:TextBox class="form-control" id="nomeEsperienza" runat="server"></asp:TextBox>
 
@@ -87,4 +87,11 @@
     </div>
        
     </div>
+
+
+   
+
+
+
+
 </asp:Content>

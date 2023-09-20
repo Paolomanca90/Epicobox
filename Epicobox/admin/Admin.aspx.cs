@@ -14,6 +14,30 @@ namespace Epicobox
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionDB"].ConnectionString.ToString();
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            SqlCommand cmd = new SqlCommand("select IdEsperienza, Nome, DescrizioneBreve, Prezzo, ImageBox, NomeLocation from Esperienze INNER JOIN Location ON Esperienze.Location = Location.IdLocation", conn);
+            SqlDataReader sqlDataReader;
+
+            conn.Open();
+
+            List<Prodotto> esperienze = new List<Prodotto>();
+            sqlDataReader = cmd.ExecuteReader();
+
+            while (sqlDataReader.Read())
+            {
+                Prodotto esperienza = new Prodotto();
+                esperienza.IdEsperienza = Convert.ToInt32(sqlDataReader["IdEsperienza"]);
+                esperienza.Nome = sqlDataReader["Nome"].ToString();
+                esperienza.Location = sqlDataReader["NomeLocation"].ToString();
+                esperienza.DescrizioneBreve = sqlDataReader["DescrizioneBreve"].ToString();
+                esperienza.Prezzo = Convert.ToDecimal(sqlDataReader["Prezzo"]);
+                esperienza.ImageBox = sqlDataReader["ImageBox"].ToString();
+                esperienze.Add(esperienza);
+
+            }
+
         }
 
         protected void aggiungiEsperienza(object sender, EventArgs e)
@@ -75,6 +99,7 @@ namespace Epicobox
             if (fileUpload2.HasFile)
             {
                 filename2 = fileUpload2.FileName;
+                //se aggiungi un nuovo file te lo salva nella cartella img
                 fileUpload2.SaveAs(Server.MapPath($"/Content/img/{fileUpload2.FileName}"));
             }
             cmd.Parameters.AddWithValue("Image1", filename2);
