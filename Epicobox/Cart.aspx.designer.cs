@@ -24,13 +24,13 @@ namespace Epicobox
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Cart1;
 
         /// <summary>
-        /// Controllo GridViewCarrello.
+        /// Controllo Repeater1.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewCarrello;
+        protected global::System.Web.UI.WebControls.Repeater Repeater1;
 
         /// <summary>
         /// Controllo totaleCarrello.
