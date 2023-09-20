@@ -11,44 +11,44 @@ namespace Epicobox
 {
 
 
-    public partial class Details
+    public partial class Admin
     {
 
         /// <summary>
-        /// Controllo imageBox.
+        /// Controllo nomeEsperienza.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imageBox;
+        protected global::System.Web.UI.WebControls.TextBox nomeEsperienza;
 
         /// <summary>
-        /// Controllo Nome.
+        /// Controllo descrizioneBreve.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Nome;
+        protected global::System.Web.UI.WebControls.TextBox descrizioneBreve;
 
         /// <summary>
-        /// Controllo Prezzo.
+        /// Controllo descrizioneLunga.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Prezzo;
+        protected global::System.Web.UI.WebControls.TextBox descrizioneLunga;
 
         /// <summary>
-        /// Controllo DescrizioneLunga.
+        /// Controllo prezzo.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DescrizioneLunga;
+        protected global::System.Web.UI.WebControls.TextBox prezzo;
 
         /// <summary>
         /// Controllo dataInizio.
@@ -57,7 +57,7 @@ namespace Epicobox
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dataInizio;
+        protected global::System.Web.UI.WebControls.TextBox dataInizio;
 
         /// <summary>
         /// Controllo dataFine.
@@ -66,60 +66,60 @@ namespace Epicobox
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dataFine;
+        protected global::System.Web.UI.WebControls.TextBox dataFine;
 
         /// <summary>
-        /// Controllo location.
+        /// Controllo DropDownList1.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl location;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
         /// <summary>
-        /// Controllo categoria.
+        /// Controllo DropDownList2.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl categoria;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
 
         /// <summary>
-        /// Controllo Button1.
+        /// Controllo fileUpload1.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Button1;
+        protected global::System.Web.UI.WebControls.FileUpload fileUpload1;
 
         /// <summary>
-        /// Controllo image1.
+        /// Controllo fileUpload2.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image image1;
+        protected global::System.Web.UI.WebControls.FileUpload fileUpload2;
 
         /// <summary>
-        /// Controllo image2.
+        /// Controllo fileUpload3.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image image2;
+        protected global::System.Web.UI.WebControls.FileUpload fileUpload3;
 
         /// <summary>
-        /// Controllo image3.
+        /// Controllo fileUpload4.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image image3;
+        protected global::System.Web.UI.WebControls.FileUpload fileUpload4;
     }
 }
