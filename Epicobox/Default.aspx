@@ -40,7 +40,8 @@
                                             </div>
                                         </div>
                                         <div>
-                                            <a href="Details.aspx?IdEsperienza=<%# Item.IdEsperienza %>" class="btn btn-warning">Dettagli <i class="bx bx-detail"></i></a>
+                                            <a href="Details.aspx?IdEsperienza=<%# Item.IdEsperienza %>" class="btn btn-warning me-3">Dettagli <i class="bx bx-detail"></i></a>
+                                           <a href="admin/Admin.aspx?IdEsperienza=<%# Item.IdEsperienza %>" class="btn btn-danger" id="btnAdmin" runat="server" Visible='<%# (string)Session["User"] == "Admin" %>'>Gestisci <i class="bx bx-key"></i></a>
                                         </div>
                                     </div>
                                 </div>
