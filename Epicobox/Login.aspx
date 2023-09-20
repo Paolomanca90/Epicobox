@@ -18,36 +18,41 @@
       <div class="slider-tab"></div>
     </div>
     <div class="form-inner">
-      <div class="login">
+      <div class="form login">
         <div class="field">
-          <input type="text" placeholder="Username" required>
+          
+            <asp:TextBox ID="LoginUsername" runat="server" placeholder="Username"></asp:TextBox>
         </div>
         <div class="field">
-          <input type="password" placeholder="Password" required>
+  
+            <asp:TextBox ID="LoginPassword" runat="server" placeholder="Password"></asp:TextBox>
         </div>
         
         <div class="field btn">
           <div class="btn-layer"></div>
-          <input type="submit" value="Login">
+            <asp:Button ID="Button1" runat="server" Text="Login" OnClick="Button1_Click" />
         </div>
         <div class="signup-link w-100">Non sei ancora dei nostri? <a href="#">Registrati ora</a></div>
       </div>
-      <div class="signup">
+      <div class="form signup">
         <div class="field">
-          <input type="text" placeholder="Username" required>
+          <asp:TextBox ID="SignupUsername" runat="server" placeholder="Username"></asp:TextBox> 
         </div>
         <div class="field">
-          <input type="password" placeholder="Password" required>
+          <asp:TextBox ID="SignupPassword" runat="server" placeholder="Password"></asp:TextBox>
         </div>
         
         <div class="field btn">
           <div class="btn-layer"></div>
-          <input type="submit" value="Signup">
+          <asp:Button ID="Button2" runat="server" Text="Login" OnClick="Button2_Click" />
         </div>
       </div>
     </div>
   </div>
 </div>
+        <div class="text-center mt-5 fs-4">
+            <asp:label runat="server" id="lblMessage" ForeColor="DarkRed" >Utente non trovato. Riprova o esegui il SignUp</asp:label>
+        </div>
 </section>
     <script src="Scripts/login.js"></script>
 
