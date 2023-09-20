@@ -82,7 +82,7 @@ namespace Epicobox
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandText = "UPDATE Esperienze SET Nome=@Nome, DescrizioneCorta=@DescrizioneCorta, DescrizioneLunga=@DescrizioneLunga, Prezzo=@prezzo,DataInizio=@DataInizio,DataFine=@DataFine" +
-                ",Location=@Location, Categoria=@Categoria, ImageBox=@ImageBox, Image1=@Image1, Image2=@Image2, Image3=@Image3, Image4=@Image4 where Id=@id";
+                ",Location=@Location, Categoria=@Categoria, ImageBox=@ImageBox, Image1=@Image1, Image2=@Image2, Image3=@Image3, Image4=@Image4 where IdEsperienza=@id";
             cmd.Parameters.AddWithValue("Nome", nomeEsperienza.Text);
             cmd.Parameters.AddWithValue("DescrizioneCorta", descrizioneBreve.Text);
             cmd.Parameters.AddWithValue("DescrizioneLunga", descrizioneLunga.Text);
@@ -145,7 +145,7 @@ namespace Epicobox
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "DELETE FROM Esperienze where Id=@id";
+            cmd.CommandText = "DELETE FROM Esperienze where IdEsperienza=@id";
             cmd.Parameters.AddWithValue("id", Request.QueryString["IdProdotto"]);
 
             conn.Open();
