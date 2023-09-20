@@ -18,7 +18,6 @@
                                 <strong>Nome Xperience</strong>
 
                             </div>
-
                             <div class="col text-center ">
                                 <strong>Prezzo</strong>
                             </div>

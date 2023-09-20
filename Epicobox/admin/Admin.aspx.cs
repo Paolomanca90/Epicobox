@@ -37,7 +37,6 @@ namespace Epicobox
                 esperienze.Add(esperienza);
 
             }
-
         }
 
         protected void aggiungiEsperienza(object sender, EventArgs e)
@@ -72,8 +71,6 @@ namespace Epicobox
             DropDownList1.SelectedIndex=1;
             dataInizio.Text="";
             dataFine.Text="";
-            
-
         }
 
         protected void modifica_Click(object sender, EventArgs e)
