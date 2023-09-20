@@ -74,9 +74,14 @@
              <asp:Label runat="server" class="form-label">Caricare Quarta Immagine</asp:Label>
 
                <asp:FileUpload id="fileUpload4" runat="server" ></asp:FileUpload>
+              <asp:Label runat="server" class="form-label">Caricare Quinta Immagine</asp:Label>
+
+       <asp:FileUpload id="fileUpload5" runat="server" ></asp:FileUpload>
 
 
-             <asp:Button runat="server" Text="Aggiungi Esperienza" OnClick="aggiungiEsperienza"  />
+            <asp:Button ID="aggiungi" runat="server" Text="Aggiungi Esperienza" OnClick="aggiungiEsperienza"  />
+            <asp:Button ID="modifica" runat="server" Text="Modifica Esperienza" OnClick="modifica_Click"  />
+            <asp:Button ID="elimina" runat="server" Text="Elimina Esperienza" OnClick="elimina_Click"  />
 
 
     </div>
