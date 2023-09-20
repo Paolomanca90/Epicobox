@@ -56,8 +56,9 @@ namespace Epicobox
         public string Image1 { get; set; }
         public string Image2 { get; set; }
         public string Image3 { get; set; }
+        public int Quantity { get; set; }
         public Prodotto() { }
-        public Prodotto(int id,string nome, string descrizioneBreve, string descrizioneCompleta, decimal prezzo, string image, string location, string categoria, DateTime dataInizio, DateTime dataFine, string image1, string image2, string image3)
+        public Prodotto(int id,string nome, string descrizioneBreve, string descrizioneCompleta, decimal prezzo, string image, string location, string categoria, DateTime dataInizio, DateTime dataFine, string image1, string image2, string image3, int quantity)
         {
             IdEsperienza = id;
             Nome = nome;
@@ -70,8 +71,9 @@ namespace Epicobox
             Location = location;
             Categoria = categoria;
             Image1 = image1;
-            Image2 = image;
+            Image2 = image2;
             Image3 = image3;
+            Quantity = quantity;
         }
     }
 }

@@ -15,6 +15,13 @@
             <p>Location: <span id="location" runat="server" class="fst-italic"></span></p>
             <p>Categoria: <span id="categoria" runat="server" class="fst-italic"></span></p>
             <div class="text-end">
+                <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:ListItem Value="1" Text="1" Selected="True"></asp:ListItem>
+                    <asp:ListItem Value="2" Text="2"></asp:ListItem>
+                    <asp:ListItem Value="3" Text="3"></asp:ListItem>
+                    <asp:ListItem Value="4" Text="4"></asp:ListItem>
+                    <asp:ListItem Value="5" Text="5"></asp:ListItem>
+                </asp:DropDownList>
                 <asp:LinkButton ID="Button1" runat="server" class="btn btn-warning fs-4 fw-semibold px-4" onclick="Button1_Click" >Aggiungi al carrello <i class='bx bx-cart icon fs-3'></i></asp:LinkButton>
             </div>          
         </div>

@@ -61,7 +61,7 @@ namespace Epicobox
                 prodottoScelto = new Prodotto
                 {
                     Nome = sqlreader["Nome"].ToString(),
-                    Prezzo = decimal.Parse(sqlreader["Prezzo"].ToString()),
+                    Prezzo = decimal.Parse(sqlreader["Prezzo"].ToString()) * decimal.Parse(DropDownList1.SelectedItem.Value),
                     DescrizioneLunga = sqlreader["DescrizioneLunga"].ToString(),
                     DescrizioneBreve = sqlreader["DescrizioneBreve"].ToString(),
                     DataInizio = DateTime.Parse(sqlreader["DataInizio"].ToString()),
@@ -71,7 +71,8 @@ namespace Epicobox
                     ImageBox = sqlreader["ImageBox"].ToString(),
                     Image1 = sqlreader["Image1"].ToString(),
                     Image2 = sqlreader["Image2"].ToString(),
-                    Image3 = sqlreader["Image3"].ToString()
+                    Image3 = sqlreader["Image3"].ToString(),
+                    Quantity = Convert.ToInt32(DropDownList1.SelectedItem.Value)
                 };
             }
 
