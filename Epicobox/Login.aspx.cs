@@ -35,6 +35,7 @@ namespace Epicobox
             conn.Close();
             if(username != "")
             {
+                Session["User"] = username;
                 Response.Redirect("Default.aspx");
             }
             else

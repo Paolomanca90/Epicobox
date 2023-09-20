@@ -57,6 +57,13 @@
                                 </a>
                             </li>
 
+                            <li class="nav-link" id="Admin" runat="server">
+                                <a href="admin/Admin.aspx">
+                                    <i class='bx bx-lock icon'></i>
+                                    <span class="text nav-text">Admin</span>
+                                </a>
+                            </li>
+
                         </ul>
                     </div>
 
