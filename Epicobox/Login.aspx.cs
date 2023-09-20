@@ -13,25 +13,25 @@ namespace Epicobox
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblMessage.Visible = false;
+            //lblMessage.Visible = false;
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            string username = Username.Text;
-            string password = Password.Text;
-            string savedUsername = ConfigurationManager.AppSettings["Username"];
-            string savedPassword = ConfigurationManager.AppSettings["Password"];
-            if (username == savedUsername && password == savedPassword)
-            {
-                FormsAuthentication.SetAuthCookie(Username.Text, false);
-                Response.Redirect(FormsAuthentication.DefaultUrl);
-            }
-            else
-            {
-                lblMessage.Visible = true;
-            }
+        //protected void Button1_Click(object sender, EventArgs e)
+        //{
+        //    string username = Username.Text;
+        //    string password = Password.Text;
+        //    string savedUsername = ConfigurationManager.AppSettings["Username"];
+        //    string savedPassword = ConfigurationManager.AppSettings["Password"];
+        //    if (username == savedUsername && password == savedPassword)
+        //    {
+        //        FormsAuthentication.SetAuthCookie(Username.Text, false);
+        //        Response.Redirect(FormsAuthentication.DefaultUrl);
+        //    }
+        //    else
+        //    {
+        //        lblMessage.Visible = true;
+        //    }
 
-        }
+        //}
     }
 }

@@ -21,7 +21,7 @@ namespace Epicobox
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Input nomeEsperienza;
+        protected global::System.Web.UI.WebControls.TextBox nomeEsperienza;
 
         /// <summary>
         /// Controllo descrizioneBreve.
@@ -30,7 +30,7 @@ namespace Epicobox
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Input descrizioneBreve;
+        protected global::System.Web.UI.WebControls.TextBox descrizioneBreve;
 
         /// <summary>
         /// Controllo descrizioneLunga.
@@ -39,7 +39,7 @@ namespace Epicobox
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Input descrizioneLunga;
+        protected global::System.Web.UI.WebControls.TextBox descrizioneLunga;
 
         /// <summary>
         /// Controllo prezzo.
@@ -48,7 +48,7 @@ namespace Epicobox
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Input prezzo;
+        protected global::System.Web.UI.WebControls.TextBox prezzo;
 
         /// <summary>
         /// Controllo dataInizio.
@@ -57,7 +57,7 @@ namespace Epicobox
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Input dataInizio;
+        protected global::System.Web.UI.WebControls.TextBox dataInizio;
 
         /// <summary>
         /// Controllo dataFine.
@@ -66,7 +66,7 @@ namespace Epicobox
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Input dataFine;
+        protected global::System.Web.UI.WebControls.TextBox dataFine;
 
         /// <summary>
         /// Controllo DropDownList1.
