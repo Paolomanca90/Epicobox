@@ -87,6 +87,15 @@ namespace Epicobox
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl categoria;
 
         /// <summary>
+        /// Controllo DropDownList1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+
+        /// <summary>
         /// Controllo Button1.
         /// </summary>
         /// <remarks>

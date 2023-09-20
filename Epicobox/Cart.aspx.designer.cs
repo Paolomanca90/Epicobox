@@ -15,6 +15,15 @@ namespace Epicobox
     {
 
         /// <summary>
+        /// Controllo lblCart.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblCart;
+
+        /// <summary>
         /// Controllo Cart1.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,15 @@ namespace Epicobox
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Cart1;
+
+        /// <summary>
+        /// Controllo header.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl header;
 
         /// <summary>
         /// Controllo Repeater1.
