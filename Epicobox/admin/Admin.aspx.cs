@@ -11,69 +11,73 @@ namespace Epicobox
 {
     public partial class Admin : System.Web.UI.Page
     {
-        string imagebox = null;
-        string image1 = null;
-        string image2 = null;
-        string image3 = null;
-        string image4 = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                if ((string)Session["User"] == "Admin")
-                {
-                    if (!string.IsNullOrEmpty(Request.QueryString["IdEsperienza"]))
-                    {
-                        string connectionString = ConfigurationManager.ConnectionStrings["ConnectionDB"].ConnectionString.ToString();
-                        SqlConnection conn = new SqlConnection(connectionString);
-                        SqlCommand cmd = new SqlCommand("select * from Esperienze WHERE IdEsperienza=@id", conn);
-                        cmd.Parameters.AddWithValue("id", Request.QueryString["IdEsperienza"]);
-                        conn.Open();
-                        SqlDataReader sqlreader;
-                        sqlreader = cmd.ExecuteReader();
-                        while (sqlreader.Read())
-                        {
-                            nomeEsperienza.Text = sqlreader["Nome"].ToString();
-                            prezzo.Text = sqlreader["Prezzo"].ToString();
-                            descrizioneBreve.Text = sqlreader["descrizioneBreve"].ToString();
-                            descrizioneLunga.Text = sqlreader["DescrizioneLunga"].ToString();
-                            dataInizio.Text = Convert.ToDateTime(sqlreader["DataInizio"]).ToString("yyyy-MM-dd");
-                            dataFine.Text = Convert.ToDateTime(sqlreader["DataFine"]).ToString("yyyy-MM-dd");
-                            DropDownList2.SelectedValue = sqlreader["Location"].ToString();
-                            DropDownList1.SelectedValue = sqlreader["Categoria"].ToString();
-                            imagebox = sqlreader["ImageBox"].ToString();
-                            image1 = sqlreader["Image1"].ToString();
-                            image2 = sqlreader["Image2"].ToString();
-                            image3 = sqlreader["Image3"].ToString();
-                            image4 = sqlreader["Image4"].ToString();
-                        }
-
-                        conn.Close();
-                        aggiungi.Visible = false;
-                    }
-                    else
-                    {
-                        modifica.Visible = false;
-                        elimina.Visible = false;
-                    }
-                }
-                else
+                if ((string)Session["User"] != "Admin")
                 {
                     Session["User"] = null;
                     Response.Redirect("../Login.aspx");
+                    return; 
                 }
-            
+
+                if (!string.IsNullOrEmpty(Request.QueryString["IdEsperienza"]))
+                {
+                    string connectionString = ConfigurationManager.ConnectionStrings["ConnectionDB"].ConnectionString.ToString();
+                    SqlConnection conn = new SqlConnection(connectionString);
+                    SqlCommand cmd = new SqlCommand("select * from Esperienze WHERE IdEsperienza=@id", conn);
+                    cmd.Parameters.AddWithValue("id", Request.QueryString["IdEsperienza"]);
+                    conn.Open();
+                    SqlDataReader sqlreader;
+                    sqlreader = cmd.ExecuteReader();
+                    while (sqlreader.Read())
+                    {
+                        nomeEsperienza.Text = sqlreader["Nome"].ToString();
+                        prezzo.Text = sqlreader["Prezzo"].ToString();
+                        descrizioneBreve.Text = sqlreader["descrizioneBreve"].ToString();
+                        descrizioneLunga.Text = sqlreader["DescrizioneLunga"].ToString();
+                        dataInizio.Text = Convert.ToDateTime(sqlreader["DataInizio"]).ToString("yyyy-MM-dd");
+                        dataFine.Text = Convert.ToDateTime(sqlreader["DataFine"]).ToString("yyyy-MM-dd");
+                        DropDownList2.SelectedValue = sqlreader["Location"].ToString();
+                        DropDownList1.SelectedValue = sqlreader["Categoria"].ToString();
+                    }
+
+                    conn.Close();
+                    aggiungi.Visible = false;
+                }
+                else
+                {
+                    modifica.Visible = false;
+                    elimina.Visible = false;
+                }
             }
         }
 
+
         protected void aggiungiEsperienza(object sender, EventArgs e)
         {
+            string imagebox = "";
+            string image1 = "";
+            string image2 = "";
+            string image3 = "";
+            string image4 = "";
             string connectionString= ConfigurationManager.ConnectionStrings["ConnectionDB"].ConnectionString.ToString();
-
             SqlConnection conn=new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
+            cmd.CommandText = "select * from Esperienze WHERE IdEsperienza=@id";
+            SqlDataReader sqlreader;
+            sqlreader = cmd.ExecuteReader();
+            while (sqlreader.Read())
+            {
+                imagebox = sqlreader["ImageBox"].ToString();
+                image1 = sqlreader["Image1"].ToString();
+                image2 = sqlreader["Image2"].ToString();
+                image3 = sqlreader["Image3"].ToString();
+                image4 = sqlreader["Image4"].ToString();
+            }
             cmd.CommandText = "INSERT INTO Esperienze Values ( @Nome, @Categoria, @Prezzo, @DescrizioneBreve, @DescrizioneLunga, @ImageBox, @Image1, @Image2, @Image3, @Image4, @Location, @DataInizio, @DataFine ) ";
             cmd.Parameters.AddWithValue("Nome", nomeEsperienza.Text);
             cmd.Parameters.AddWithValue("Categoria", DropDownList2.SelectedItem.Value);
@@ -141,12 +145,32 @@ namespace Epicobox
 
         protected void modifica_Click(object sender, EventArgs e)
         {
+            string imagebox = "";
+            string image1 = "";
+            string image2 = "";
+            string image3 = "";
+            string image4 = "";
             string connection = ConfigurationManager.ConnectionStrings["ConnectionDB"]
           .ConnectionString.ToString();
             SqlConnection conn = new SqlConnection(connection);
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
+            cmd.CommandText = "select * from Esperienze WHERE IdEsperienza=@id";
+            cmd.Parameters.AddWithValue("id", Request.QueryString["IdEsperienza"]);
+            SqlDataReader sqlreader;
             conn.Open();
+            sqlreader = cmd.ExecuteReader();
+            while (sqlreader.Read())
+            {
+                imagebox = sqlreader["ImageBox"].ToString();
+                image1 = sqlreader["Image1"].ToString();
+                image2 = sqlreader["Image2"].ToString();
+                image3 = sqlreader["Image3"].ToString();
+                image4 = sqlreader["Image4"].ToString();
+            }
+            conn.Close();
+            conn.Open();
+
             try { 
             cmd.CommandText = "UPDATE Esperienze SET Nome=@Nome, Categoria=@Categoria, Prezzo=@Prezzo, DescrizioneBreve=@DescrizioneBreve, DescrizioneLunga=@DescrizioneLunga, ImageBox=@ImageBox, Image1=@Image1, Image2=@Image2, Image3=@Image3, Image4=@Image4, Location=@Location, DataInizio=@DataInizio, DataFine=@DataFine where IdEsperienza=@id";
             cmd.Parameters.AddWithValue("Nome", nomeEsperienza.Text);
@@ -208,10 +232,8 @@ namespace Epicobox
                 fileUpload5.SaveAs(Server.MapPath($"../Content/Img/{fileUpload5.FileName}"));
             }
 
-            cmd.Parameters.AddWithValue("id", Request.QueryString["IdEsperienza"]);
-
-
             cmd.ExecuteNonQuery();
+                Response.Write("Modifica effettuata");
         }
             catch
             {
