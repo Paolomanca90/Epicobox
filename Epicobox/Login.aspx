@@ -25,7 +25,7 @@
         </div>
         <div class="field">
   
-            <asp:TextBox ID="LoginPassword" runat="server" placeholder="Password"></asp:TextBox>
+            <asp:TextBox ID="LoginPassword" TextMode="Password" runat="server" placeholder="Password"></asp:TextBox>
         </div>
         
         <div class="field btn">
@@ -39,7 +39,7 @@
           <asp:TextBox ID="SignupUsername" runat="server" placeholder="Username"></asp:TextBox> 
         </div>
         <div class="field">
-          <asp:TextBox ID="SignupPassword" runat="server" placeholder="Password"></asp:TextBox>
+          <asp:TextBox ID="SignupPassword" TextMode="Password" runat="server" placeholder="Password"></asp:TextBox>
         </div>
         
         <div class="field btn">
