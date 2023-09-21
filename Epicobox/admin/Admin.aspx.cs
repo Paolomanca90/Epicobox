@@ -124,7 +124,7 @@ namespace Epicobox
             }
             cmd.Parameters.AddWithValue("Image4", filename5);
 
-            cmd.Parameters.AddWithValue("id", Request.QueryString["IdProdotto"]);
+            cmd.Parameters.AddWithValue("id", Request.QueryString["IdEsperienza"]);
 
 
             conn.Open();
@@ -146,7 +146,7 @@ namespace Epicobox
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandText = "DELETE FROM Esperienze where IdEsperienza=@id";
-            cmd.Parameters.AddWithValue("id", Request.QueryString["IdProdotto"]);
+            cmd.Parameters.AddWithValue("id", Request.QueryString["IdEsperienza"]);
 
             conn.Open();
 
