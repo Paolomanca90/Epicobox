@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace Epicobox
@@ -13,6 +14,18 @@ namespace Epicobox
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((string)Session["User"] == "Admin")
+            {
+                foreach (RepeaterItem item in Repeater1.Items)
+                {
+                    HtmlAnchor btnAdmin = item.FindControl("btnAdmin") as HtmlAnchor;
+                    if (btnAdmin != null)
+                    {
+                        btnAdmin.Visible = false;
+                    }
+                }
+            }
+
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionDB"].ConnectionString.ToString();
             SqlConnection conn = new SqlConnection(connectionString);
 

@@ -22,7 +22,7 @@
                 <header>
                     <div class="image-text">
                         <span class="image">
-                            <img src="Content/Img/logo.jpeg" alt="logo"> 
+                            <img src="../Content/Img/logo.jpeg" alt="logo"> 
                         </span>
 
                         <div class="text logo-text">
@@ -44,16 +44,23 @@
 
                         <ul class="menu-links p-0">
                             <li class="nav-link">
-                                <a href="Default.aspx">
+                                <a href="../Default.aspx">
                                     <i class='bx bx-home-alt icon'></i>
                                     <span class="text nav-text">Home</span>
                                 </a>
                             </li>
 
                             <li class="nav-link">
-                                <a href="Cart.aspx">
+                                <a href="../Cart.aspx">
                                     <i class='bx bx-cart icon'></i>
                                     <span class="text nav-text">Carrello</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link" id="Admin" runat="server">
+                                <a href="admin/Admin.aspx">
+                                    <i class='bx bx-lock icon'></i>
+                                    <span class="text nav-text">Admin</span>
                                 </a>
                             </li>
 
@@ -62,7 +69,7 @@
 
                     <div class="bottom-content">
                         <li class="">
-                            <a href="Login.aspx">
+                            <a href="../Login.aspx">
                                 <i class='bx bx-log-out icon'></i>
                                 <span class="text nav-text">Logout</span>
                             </a>
@@ -89,7 +96,7 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
-    <script src="Scripts/script.js"></script>
+    <script src="../Scripts/script.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
 </body>
 </html>

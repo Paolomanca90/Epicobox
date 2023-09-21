@@ -13,29 +13,28 @@ namespace Epicobox
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionDB"].ConnectionString.ToString();
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            SqlCommand cmd = new SqlCommand("select IdEsperienza, Nome, DescrizioneBreve, Prezzo, ImageBox, NomeLocation from Esperienze INNER JOIN Location ON Esperienze.Location = Location.IdLocation", conn);
-            SqlDataReader sqlDataReader;
-
-            conn.Open();
-
-            List<Prodotto> esperienze = new List<Prodotto>();
-            sqlDataReader = cmd.ExecuteReader();
-
-            while (sqlDataReader.Read())
+            if (Request.QueryString["IdEsperienza"] != null)
             {
-                Prodotto esperienza = new Prodotto();
-                esperienza.IdEsperienza = Convert.ToInt32(sqlDataReader["IdEsperienza"]);
-                esperienza.Nome = sqlDataReader["Nome"].ToString();
-                esperienza.Location = sqlDataReader["NomeLocation"].ToString();
-                esperienza.DescrizioneBreve = sqlDataReader["DescrizioneBreve"].ToString();
-                esperienza.Prezzo = Convert.ToDecimal(sqlDataReader["Prezzo"]);
-                esperienza.ImageBox = sqlDataReader["ImageBox"].ToString();
-                esperienze.Add(esperienza);
+                string connectionString = ConfigurationManager.ConnectionStrings["ConnectionDB"].ConnectionString.ToString();
+                SqlConnection conn = new SqlConnection(connectionString);
+                SqlCommand cmd = new SqlCommand("select * from Esperienze WHERE IdEsperienza=@id", conn);
+                cmd.Parameters.AddWithValue("id", Request.QueryString["IdEsperienza"]);
+                conn.Open();
+                SqlDataReader sqlreader;
+                sqlreader = cmd.ExecuteReader();
+                while (sqlreader.Read())
+                {
+                    nomeEsperienza.Text = sqlreader["Nome"].ToString();
+                    prezzo.Text = sqlreader["Prezzo"].ToString();
+                    descrizioneBreve.Text = sqlreader["descrizioneBreve"].ToString();
+                    descrizioneLunga.Text = sqlreader["DescrizioneLunga"].ToString();
+                    dataInizio.Text = sqlreader["DataInizio"].ToString();
+                    dataFine.Text = sqlreader["DataFine"].ToString();
+                    DropDownList2.SelectedValue = sqlreader["NomeLocation"].ToString();
+                    DropDownList1.SelectedValue = sqlreader["NomeCategoria"].ToString();
+                }
 
+                conn.Close();
             }
         }
 
@@ -47,7 +46,7 @@ namespace Epicobox
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "INSERT INTO Esperienze ( @Nome, @Categoria, @Prezzo, @DescrizioneBreve, @DescrizioneLunga, @ImageBox, @Image1, @Image2, @Image3, @Location, @DataInizio, @DataFine ) ";
+            cmd.CommandText = "INSERT INTO Esperienze Values ( @Nome, @Categoria, @Prezzo, @DescrizioneBreve, @DescrizioneLunga, @ImageBox, @Image1, @Image2, @Image3, @Location, @DataInizio, @DataFine ) ";
             cmd.Parameters.AddWithValue("Nome", nomeEsperienza.Text);
             cmd.Parameters.AddWithValue("Categoria", DropDownList2.SelectedItem.Value);
             cmd.Parameters.AddWithValue("Prezzo", prezzo.Text);
@@ -81,7 +80,7 @@ namespace Epicobox
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandText = "UPDATE Esperienze SET Nome=@Nome, DescrizioneCorta=@DescrizioneCorta, DescrizioneLunga=@DescrizioneLunga, Prezzo=@prezzo,DataInizio=@DataInizio,DataFine=@DataFine" +
-                ",Location=@Location, Categoria=@Categoria, ImageBox=@ImageBox, Image1=@Image1, Image2=@Image2, Image3=@Image3, Image4=@Image4 where Id=@id";
+                ",Location=@Location, Categoria=@Categoria, ImageBox=@ImageBox, Image1=@Image1, Image2=@Image2, Image3=@Image3, Image4=@Image4 where IdEsperienza=@id";
             cmd.Parameters.AddWithValue("Nome", nomeEsperienza.Text);
             cmd.Parameters.AddWithValue("DescrizioneCorta", descrizioneBreve.Text);
             cmd.Parameters.AddWithValue("DescrizioneLunga", descrizioneLunga.Text);
@@ -123,7 +122,7 @@ namespace Epicobox
             }
             cmd.Parameters.AddWithValue("Image4", filename5);
 
-            cmd.Parameters.AddWithValue("id", Request.QueryString["IdProdotto"]);
+            cmd.Parameters.AddWithValue("id", Request.QueryString["IdEsperienza"]);
 
 
             conn.Open();
@@ -144,8 +143,8 @@ namespace Epicobox
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "DELETE FROM Esperienze where Id=@id";
-            cmd.Parameters.AddWithValue("id", Request.QueryString["IdProdotto"]);
+            cmd.CommandText = "DELETE FROM Esperienze where IdEsperienza=@id";
+            cmd.Parameters.AddWithValue("id", Request.QueryString["IdEsperienza"]);
 
             conn.Open();
 
