@@ -28,7 +28,7 @@
                 <asp:Label for="DropDownList1" runat="server" class="form-label d-flex text fs-5 p-0 m-0">Selezionare la Location</asp:Label>
                 <asp:DropDownList ID="DropDownList1" runat="server" class="w-25">
 
-                    <asp:ListItem Value="1" Text="Italia"></asp:ListItem>
+                    <asp:ListItem Value="1" Text="Italia" Selected="True"></asp:ListItem>
 
                     <asp:ListItem Value="2" Text="Europa"></asp:ListItem>
 
@@ -39,7 +39,7 @@
                 <asp:Label for="DropDownList2" runat="server" class="form-label text fs-5 p-0 m-0 d-flex">Selezionare la Categoria</asp:Label>
                 <asp:DropDownList ID="DropDownList2" runat="server" class="w-25">
 
-                    <asp:ListItem Value="1" Text="Soggiorni"></asp:ListItem>
+                    <asp:ListItem Value="1" Text="Soggiorni" Selected="True"></asp:ListItem>
 
                     <asp:ListItem Value="2" Text="Benessere"></asp:ListItem>
 
