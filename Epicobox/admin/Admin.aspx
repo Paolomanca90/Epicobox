@@ -4,6 +4,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="home">
         <div class="text">Pagina per la gestione delle Xperience</div>
+
+    <div >
+    <asp:Label ID="Label2" Visible="false" class="d-block my-5 w-25 fs-6 fw-bold text-center mx-auto   rounded-pill text text-bg-warning" runat="server" Text="Articolo modificato correttamente"></asp:Label>
+    </div>
+
+
+
         <div class="container border border-3 p-5 my-4 rounded-2 border-secondary">
 
             <div class="mb-3 d-flex flex-column mb-0">
@@ -87,7 +94,7 @@
                     <asp:Button ID="modifica" runat="server" Text="Modifica Esperienza" OnClick="modifica_Click" class="btn btn-warning w-25 fs-4 fw-semibold" />
                     <asp:Button ID="elimina" runat="server" Text="Elimina Esperienza" OnClick="elimina_Click" class="btn btn-danger w-25 fs-4 fw-semibold" />
                 </div>  
-
+                 
             </div>
 
         </div>
