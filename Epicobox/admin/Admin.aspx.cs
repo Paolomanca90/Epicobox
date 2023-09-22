@@ -15,7 +15,7 @@ namespace Epicobox
         protected void Page_Load(object sender, EventArgs e)
         {
             
-
+            
 
 
             if (!IsPostBack)
@@ -60,10 +60,6 @@ namespace Epicobox
                     modifica.Visible = false;
                     elimina.Visible = false;
                 }
-            }
-            else
-            {
-                Label2.Visible = true;
             }
         }
 
@@ -246,8 +242,7 @@ namespace Epicobox
             }
 
             cmd.ExecuteNonQuery();
-                Response.Write("Modifica effettuata");
-               
+                Label1.Visible = true;
             }
             catch
             {
@@ -257,7 +252,7 @@ namespace Epicobox
             {
                 conn.Close();
                 
-                Response.Redirect(Request.RawUrl);
+                //Response.Redirect(Request.RawUrl);
             }
 
         }

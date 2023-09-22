@@ -5,9 +5,9 @@
     <section class="home">
         <div class="text">Pagina per la gestione delle Xperience</div>
 
-    <div >
-    <asp:Label ID="Label2" Visible="false" class="d-block my-5 w-25 fs-6 fw-bold text-center mx-auto   rounded-pill text text-bg-warning" runat="server" Text="Articolo modificato correttamente"></asp:Label>
-    </div>
+         <div >
+            <asp:Label ID="Label1" Visible="false" class="d-block my-5 w-25 fs-6 fw-bold text-center mx-auto   rounded-pill text text-bg-warning" runat="server" Text="Articolo modificato correttamente"></asp:Label>
+        </div>
 
 
 
