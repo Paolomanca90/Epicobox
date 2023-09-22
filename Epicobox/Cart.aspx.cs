@@ -11,8 +11,10 @@ namespace Epicobox
     {
         List<Prodotto> carrello;
         decimal totale;
+        int quantity = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Label1.Visible = false;
             if (Session["Carrello"] != null)
             {
                 carrello = Session["Carrello"] as List<Prodotto>;
@@ -23,6 +25,12 @@ namespace Epicobox
                 foreach (Prodotto prodotto in carrello)
                 {
                     totale += prodotto.Prezzo;
+                    quantity += prodotto.Quantity;
+                }
+                if (quantity >= 3)
+                {
+                    totale = totale * 70 / 100;
+                    Label1.Visible = true;
                 }
                 totaleCarrello.InnerHtml = totale.ToString("C");
                 header.Visible = true;

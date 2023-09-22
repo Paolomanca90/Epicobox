@@ -7,6 +7,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="home">
         <div class="text">Dettagli della box</div>
+        <div >
+            <asp:Label ID="Label1" class="d-block my-5 w-25 fs-6 fw-bold text-center mx-auto   rounded-pill text text-bg-warning" runat="server" Text="Articolo aggiunto al carrello"></asp:Label>
+        </div>
         <div class="w-75 rounded-2 border border-3 border-secondary text mx-auto py-5">
 
             <asp:Image ID="imageBox" runat="server" class="w-100 mb-3"/>
@@ -27,12 +30,6 @@
                 <asp:LinkButton ID="Button1" runat="server" class="btn btn-warning fs-4 fw-semibold px-4" onclick="Button1_Click" >Aggiungi al carrello <i class='bx bx-cart icon fs-3'></i></asp:LinkButton>
             </div>          
         </div>
-
-        <div >
-            <asp:Label ID="Label1" class="d-block my-5 w-25 fs-6 fw-bold text-center mx-auto   rounded-pill text text-bg-warning" runat="server" Text="Articolo aggiunto al carrello"></asp:Label>
-        </div>
-
-
 
         <div>
             <h2 class="text mt-4 fw-semibold">...qualche dettaglio in più</h2>
@@ -65,6 +62,15 @@
                             <i class="fa fa-heart"></i>
                             <p class="text px-2">926</p>
                         </a>
+                    </div>
+
+                    <div class="slider-single">
+                        <asp:Image ID="image4" runat="server" class="slider-single-image rounded-2" />
+                        <h1 class="slider-single-title text text-center">Super Promo</h1>
+<%--                        <a class="slider-single-likes" href="javascript:void(0);">
+                            <i class="fa fa-heart"></i>
+                            <p class="text px-2">926</p>
+                        </a>--%>
                     </div>
 
                 </div>

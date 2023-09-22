@@ -46,6 +46,7 @@ namespace Epicobox
                     image1.ImageUrl = $"Content/Img/{sqlreader["Image1"].ToString()}";
                     image2.ImageUrl = $"Content/Img/{sqlreader["Image2"].ToString()}";
                     image3.ImageUrl = $"Content/Img/{sqlreader["Image3"].ToString()}";
+                    image4.ImageUrl = $"Content/Img/{sqlreader["Image4"].ToString()}";     
                 }
 
                 conn.Close();

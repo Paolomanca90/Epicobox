@@ -69,6 +69,10 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
+        
+        <div >
+            <asp:Label ID="Label1" class="d-block my-5 w-25 fs-6 fw-bold text-center mx-auto   rounded-pill text text-bg-warning" runat="server" Text="Sconto del 30% applicato al carrello"></asp:Label>
+        </div>
 
         <div class="d-flex justify-content-between py-3 text">
             <h5 class="fs-3">Totale <span runat="server" id="totaleCarrello">€ 0,00</span></h5>
