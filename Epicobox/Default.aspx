@@ -103,7 +103,7 @@
   <div class="footer-center">
     <div>
       <i class="fa fa-map-marker"></i>
-      <p><span>Sottoscala, 4 Private Drive</span> Londra, Inghilterra</p>
+      <p><span>Sottoscala, 4 Private Drive</span> Little Whinging, Surrey</p>
     </div>
 
     <div>
@@ -113,18 +113,26 @@
 
     <div>
       <i class="fa fa-envelope"></i>
-      <p><a href="mailto:support@company.com">support@giftx.com</a></p>
+      <p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">support@giftx.com</a></p>
     </div>
   </div>
 
-  <div class="footer-right">
-    <p class="footer-company-about">
-      <span>Chi siamo</span>
-      Lavoro di gruppo Buildweek Epicode 09/23.
-      <hr>
-      Gruppo 2 Paolo Manca, Federico Maso, Erica Diana, Raffaele Iannello, Simone Potenza 
-    </p>
-  </div>
+           <div class="footer-right">
+  <p class="footer-company-about">
+      <h5>Progetto BuildWeek Epicode</h5>
+    <h5>Chi siamo</h5>
+         <hr> <i class="fab fa-linkedin"></i>
+    <a class="anchor ms-1" href="https://www.linkedin.com/in/paolo-manca-developer/" target="_blank"> Paolo Manca </a>  <br />
+      <i class="fab fa-linkedin"></i>
+     <a class="anchor ms-1" href="https://www.linkedin.com/in/federico-maso-full-stack-developer/" target="_blank"> Federico Maso </a> <br />
+      <i class="fab fa-linkedin"></i>
+      <a class="anchor ms-1" href="https://www.linkedin.com/in/erica-diana-full-stack-developer/" target="_blank"> Erica Diana </a> <br />
+      <i class="fab fa-linkedin"></i>
+      <a class="anchor ms-1" href="https://www.linkedin.com/in/raffaeleianniello-webdeveloper/" target="_blank"> Raffaele Iannello </a>  <br />
+      <i class="fab fa-linkedin"></i>
+      <a class="anchor ms-1" href="https://www.linkedin.com/in/simone-potenza-front-end-developer/" target="_blank"> Simone Potenza </a> <br />
+  </p>
+</div>
 </footer>
     </section>
 </asp:Content>
