@@ -97,6 +97,5 @@
         </div>
     </form>
     <script src="../Scripts/script.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
 </body>
 </html>

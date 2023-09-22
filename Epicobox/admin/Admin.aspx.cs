@@ -13,124 +13,240 @@ namespace Epicobox
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["IdEsperienza"] != null)
+            if (!IsPostBack)
             {
-                string connectionString = ConfigurationManager.ConnectionStrings["ConnectionDB"].ConnectionString.ToString();
-                SqlConnection conn = new SqlConnection(connectionString);
-                SqlCommand cmd = new SqlCommand("select * from Esperienze WHERE IdEsperienza=@id", conn);
-                cmd.Parameters.AddWithValue("id", Request.QueryString["IdEsperienza"]);
-                conn.Open();
-                SqlDataReader sqlreader;
-                sqlreader = cmd.ExecuteReader();
-                while (sqlreader.Read())
+                if ((string)Session["User"] != "Admin")
                 {
-                    nomeEsperienza.Text = sqlreader["Nome"].ToString();
-                    prezzo.Text = sqlreader["Prezzo"].ToString();
-                    descrizioneBreve.Text = sqlreader["descrizioneBreve"].ToString();
-                    descrizioneLunga.Text = sqlreader["DescrizioneLunga"].ToString();
-                    dataInizio.Text = sqlreader["DataInizio"].ToString();
-                    dataFine.Text = sqlreader["DataFine"].ToString();
-                    DropDownList2.SelectedValue = sqlreader["NomeLocation"].ToString();
-                    DropDownList1.SelectedValue = sqlreader["NomeCategoria"].ToString();
+                    Session["User"] = null;
+                    Response.Redirect("../Login.aspx");
+                    return; 
                 }
 
-                conn.Close();
+                if (!string.IsNullOrEmpty(Request.QueryString["IdEsperienza"]))
+                {
+                    string connectionString = ConfigurationManager.ConnectionStrings["ConnectionDB"].ConnectionString.ToString();
+                    SqlConnection conn = new SqlConnection(connectionString);
+                    SqlCommand cmd = new SqlCommand("select * from Esperienze WHERE IdEsperienza=@id", conn);
+                    cmd.Parameters.AddWithValue("id", Request.QueryString["IdEsperienza"]);
+                    conn.Open();
+                    SqlDataReader sqlreader;
+                    sqlreader = cmd.ExecuteReader();
+                    while (sqlreader.Read())
+                    {
+                        nomeEsperienza.Text = sqlreader["Nome"].ToString();
+                        prezzo.Text = sqlreader["Prezzo"].ToString();
+                        descrizioneBreve.Text = sqlreader["descrizioneBreve"].ToString();
+                        descrizioneLunga.Text = sqlreader["DescrizioneLunga"].ToString();
+                        dataInizio.Text = Convert.ToDateTime(sqlreader["DataInizio"]).ToString("yyyy-MM-dd");
+                        dataFine.Text = Convert.ToDateTime(sqlreader["DataFine"]).ToString("yyyy-MM-dd");
+                        DropDownList2.SelectedValue = sqlreader["Location"].ToString();
+                        DropDownList1.SelectedValue = sqlreader["Categoria"].ToString();
+                    }
+
+                    conn.Close();
+                    aggiungi.Visible = false;
+                }
+                else
+                {
+                    modifica.Visible = false;
+                    elimina.Visible = false;
+                }
             }
         }
 
+
         protected void aggiungiEsperienza(object sender, EventArgs e)
         {
+            string imagebox = "";
+            string image1 = "";
+            string image2 = "";
+            string image3 = "";
+            string image4 = "";
             string connectionString= ConfigurationManager.ConnectionStrings["ConnectionDB"].ConnectionString.ToString();
-
             SqlConnection conn=new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "INSERT INTO Esperienze Values ( @Nome, @Categoria, @Prezzo, @DescrizioneBreve, @DescrizioneLunga, @ImageBox, @Image1, @Image2, @Image3, @Location, @DataInizio, @DataFine ) ";
+            cmd.CommandText = "select * from Esperienze WHERE IdEsperienza=@id";
+            SqlDataReader sqlreader;
+            sqlreader = cmd.ExecuteReader();
+            while (sqlreader.Read())
+            {
+                imagebox = sqlreader["ImageBox"].ToString();
+                image1 = sqlreader["Image1"].ToString();
+                image2 = sqlreader["Image2"].ToString();
+                image3 = sqlreader["Image3"].ToString();
+                image4 = sqlreader["Image4"].ToString();
+            }
+            cmd.CommandText = "INSERT INTO Esperienze Values ( @Nome, @Categoria, @Prezzo, @DescrizioneBreve, @DescrizioneLunga, @ImageBox, @Image1, @Image2, @Image3, @Image4, @Location, @DataInizio, @DataFine ) ";
             cmd.Parameters.AddWithValue("Nome", nomeEsperienza.Text);
             cmd.Parameters.AddWithValue("Categoria", DropDownList2.SelectedItem.Value);
             cmd.Parameters.AddWithValue("Prezzo", prezzo.Text);
             cmd.Parameters.AddWithValue("DescrizioneBreve", descrizioneBreve.Text);
             cmd.Parameters.AddWithValue("DescrizioneLunga", descrizioneLunga.Text);
-            cmd.Parameters.AddWithValue("ImageBox", fileUpload1.FileName);
-            cmd.Parameters.AddWithValue("Image1", fileUpload2.FileName);
-            cmd.Parameters.AddWithValue("Image2", fileUpload3.FileName);
-            cmd.Parameters.AddWithValue("Image3", fileUpload4.FileName);
-            cmd.Parameters.AddWithValue("Image4", "");
+            if (!fileUpload1.HasFile)
+            {
+                cmd.Parameters.AddWithValue("ImageBox", imagebox);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("ImageBox", fileUpload1.FileName);
+                fileUpload1.SaveAs(Server.MapPath($"../Content/Img/{fileUpload1.FileName}"));
+            }
+
+            if (!fileUpload2.HasFile)
+            {
+                cmd.Parameters.AddWithValue("Image1", image1);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("Image1", fileUpload2.FileName);
+                fileUpload2.SaveAs(Server.MapPath($"../Content/Img/{fileUpload2.FileName}"));
+            }
+
+            if (!fileUpload3.HasFile)
+            {
+                cmd.Parameters.AddWithValue("Image2", image2);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("Image2", fileUpload3.FileName);
+                fileUpload3.SaveAs(Server.MapPath($"../Content/Img/{fileUpload3.FileName}"));
+            }
+
+            if (!fileUpload4.HasFile)
+            {
+                cmd.Parameters.AddWithValue("Image3", image3);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("Image3", fileUpload4.FileName);
+                fileUpload4.SaveAs(Server.MapPath($"../Content/Img/{fileUpload4.FileName}"));
+            }
+
+            if (!fileUpload5.HasFile)
+            {
+                cmd.Parameters.AddWithValue("Image4", image4);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("Image4", fileUpload5.FileName);
+                fileUpload5.SaveAs(Server.MapPath($"../Content/Img/{fileUpload5.FileName}"));
+            }
             cmd.Parameters.AddWithValue("Location", DropDownList1.SelectedItem.Value);
             cmd.Parameters.AddWithValue("DataInizio", dataInizio.Text);
             cmd.Parameters.AddWithValue("DataFine", dataFine.Text);
+            cmd.ExecuteNonQuery();
             conn.Close();
 
-            nomeEsperienza.Text="";
-            DropDownList2.SelectedIndex=1;
-            prezzo.Text="";
-            descrizioneBreve.Text="";
-            descrizioneLunga.Text="";
-            DropDownList1.SelectedIndex=1;
-            dataInizio.Text="";
-            dataFine.Text="";
+            Response.Redirect(Request.RawUrl);
+
         }
 
         protected void modifica_Click(object sender, EventArgs e)
         {
+            string imagebox = "";
+            string image1 = "";
+            string image2 = "";
+            string image3 = "";
+            string image4 = "";
             string connection = ConfigurationManager.ConnectionStrings["ConnectionDB"]
           .ConnectionString.ToString();
             SqlConnection conn = new SqlConnection(connection);
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "UPDATE Esperienze SET Nome=@Nome, DescrizioneCorta=@DescrizioneCorta, DescrizioneLunga=@DescrizioneLunga, Prezzo=@prezzo,DataInizio=@DataInizio,DataFine=@DataFine" +
-                ",Location=@Location, Categoria=@Categoria, ImageBox=@ImageBox, Image1=@Image1, Image2=@Image2, Image3=@Image3, Image4=@Image4 where IdEsperienza=@id";
+            cmd.CommandText = "select * from Esperienze WHERE IdEsperienza=@id";
+            cmd.Parameters.AddWithValue("id", Request.QueryString["IdEsperienza"]);
+            SqlDataReader sqlreader;
+            conn.Open();
+            sqlreader = cmd.ExecuteReader();
+            while (sqlreader.Read())
+            {
+                imagebox = sqlreader["ImageBox"].ToString();
+                image1 = sqlreader["Image1"].ToString();
+                image2 = sqlreader["Image2"].ToString();
+                image3 = sqlreader["Image3"].ToString();
+                image4 = sqlreader["Image4"].ToString();
+            }
+            conn.Close();
+            conn.Open();
+
+            try { 
+            cmd.CommandText = "UPDATE Esperienze SET Nome=@Nome, Categoria=@Categoria, Prezzo=@Prezzo, DescrizioneBreve=@DescrizioneBreve, DescrizioneLunga=@DescrizioneLunga, ImageBox=@ImageBox, Image1=@Image1, Image2=@Image2, Image3=@Image3, Image4=@Image4, Location=@Location, DataInizio=@DataInizio, DataFine=@DataFine where IdEsperienza=@id";
             cmd.Parameters.AddWithValue("Nome", nomeEsperienza.Text);
-            cmd.Parameters.AddWithValue("DescrizioneCorta", descrizioneBreve.Text);
+            cmd.Parameters.AddWithValue("DescrizioneBreve", descrizioneBreve.Text);
             cmd.Parameters.AddWithValue("DescrizioneLunga", descrizioneLunga.Text);
-            cmd.Parameters.AddWithValue("Prezzo", prezzo.Text);
+            decimal prezzoValue = Decimal.Parse(prezzo.Text);
+            cmd.Parameters.AddWithValue("Prezzo", prezzoValue);
             cmd.Parameters.AddWithValue("DataInizio", dataInizio.Text);
             cmd.Parameters.AddWithValue("DataFine", dataFine.Text);
             cmd.Parameters.AddWithValue("Location", DropDownList1.SelectedItem.Value);
             cmd.Parameters.AddWithValue("Categoria", DropDownList2.SelectedItem.Value);
-            cmd.Parameters.AddWithValue("ImageBox", fileUpload1.FileName);
-
-            string filename2 = "";
-            if (fileUpload2.HasFile)
+            if (!fileUpload1.HasFile)
             {
-                filename2 = fileUpload2.FileName;
-                //se aggiungi un nuovo file te lo salva nella cartella img
-                fileUpload2.SaveAs(Server.MapPath($"/Content/img/{fileUpload2.FileName}"));
+                cmd.Parameters.AddWithValue("ImageBox", imagebox);
             }
-            cmd.Parameters.AddWithValue("Image1", filename2);
-            string filename3 = "";
-            if (fileUpload3.HasFile)
+            else
             {
-                filename3 = fileUpload3.FileName;
-                fileUpload3.SaveAs(Server.MapPath($"/Content/img/{fileUpload3.FileName}"));
+                cmd.Parameters.AddWithValue("ImageBox", fileUpload1.FileName);
+                fileUpload1.SaveAs(Server.MapPath($"../Content/Img/{fileUpload1.FileName}"));
             }
-            cmd.Parameters.AddWithValue("Image2", filename3);
-            string filename4 = "";
-            if (fileUpload4.HasFile)
+
+            if (!fileUpload2.HasFile)
             {
-                filename4 = fileUpload4.FileName;
-                fileUpload4.SaveAs(Server.MapPath($"/Content/img/{fileUpload4.FileName}"));
+                cmd.Parameters.AddWithValue("Image1", image1);
             }
-            cmd.Parameters.AddWithValue("Image3", filename4);
-
-            string filename5 = "";
-            if (fileUpload5.HasFile)
+            else
             {
-                filename5 = fileUpload5.FileName;
-                fileUpload5.SaveAs(Server.MapPath($"/Content/img/{fileUpload5.FileName}"));
+                cmd.Parameters.AddWithValue("Image1", fileUpload2.FileName);
+                fileUpload2.SaveAs(Server.MapPath($"../Content/Img/{fileUpload2.FileName}"));
             }
-            cmd.Parameters.AddWithValue("Image4", filename5);
 
-            cmd.Parameters.AddWithValue("id", Request.QueryString["IdEsperienza"]);
+            if (!fileUpload3.HasFile)
+            {
+                cmd.Parameters.AddWithValue("Image2", image2);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("Image2", fileUpload3.FileName);
+                fileUpload3.SaveAs(Server.MapPath($"../Content/Img/{fileUpload3.FileName}"));
+            }
 
+            if (!fileUpload4.HasFile)
+            {
+                cmd.Parameters.AddWithValue("Image3", image3);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("Image3", fileUpload4.FileName);
+                fileUpload4.SaveAs(Server.MapPath($"../Content/Img/{fileUpload4.FileName}"));
+            }
 
-            conn.Open();
+            if (!fileUpload5.HasFile)
+            {
+                cmd.Parameters.AddWithValue("Image4", image4);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("Image4", fileUpload5.FileName);
+                fileUpload5.SaveAs(Server.MapPath($"../Content/Img/{fileUpload5.FileName}"));
+            }
 
             cmd.ExecuteNonQuery();
+                Response.Write("Modifica effettuata");
+        }
+            catch
+            {
+                Response.Write("Modifica non riuscita");
+            }
+            finally
+            {
+                conn.Close();
 
-            conn.Close();
-           
+                Response.Redirect(Request.RawUrl);
+            }
+            
+
         }
 
       
@@ -151,8 +267,8 @@ namespace Epicobox
             cmd.ExecuteNonQuery();
 
             conn.Close();
-         
 
+            Response.Redirect(Request.RawUrl);
         }
     }
 }

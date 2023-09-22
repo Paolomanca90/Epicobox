@@ -11,14 +11,18 @@ namespace Epicobox
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((string)Session["User"] == "Admin")
+            if (!IsPostBack)
             {
-                Admin.Visible = true;
+                if ((string)Session["User"] == "Admin")
+                {
+                    Admin.Visible = true;
+                }
+                else
+                {
+                    Admin.Visible = false;
+                }
             }
-            else
-            {
-                Admin.Visible = false;
-            }
+
         }
     }
 }

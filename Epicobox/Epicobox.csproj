@@ -138,6 +138,7 @@
     <Content Include="Content\Img\bali1.jpg" />
     <Content Include="Content\Img\bali2.jpg" />
     <Content Include="Content\Img\bali3.jpg" />
+    <Content Include="Content\Img\BannerinoSconto.jpg" />
     <Content Include="Content\Img\costa_del_sol.jpg" />
     <Content Include="Content\Img\costa_del_sol1.jpg" />
     <Content Include="Content\Img\costa_del_sol2.jpg" />
@@ -157,6 +158,7 @@
     <Content Include="Content\Img\guida_sportiva1.jpg" />
     <Content Include="Content\Img\guida_sportiva2.jpg" />
     <Content Include="Content\Img\guida_sportiva3.jpg" />
+    <Content Include="Content\Img\irvelboss.jpg" />
     <Content Include="Content\Img\islanda.jpg" />
     <Content Include="Content\Img\islanda1.jpg" />
     <Content Include="Content\Img\islanda2.jpg" />
@@ -165,11 +167,19 @@
     <Content Include="Content\Img\isole_greche1.jpg" />
     <Content Include="Content\Img\isole_greche2.jpg" />
     <Content Include="Content\Img\isole_greche3.jpg" />
+    <Content Include="Content\Img\kovacs.jpg" />
+    <Content Include="Content\Img\lidiacodes.jpg" />
+    <Content Include="Content\Img\lidiak.jpg" />
+    <Content Include="Content\Img\lidias.jpg" />
     <Content Include="Content\Img\liguria1.jpg" />
     <Content Include="Content\Img\liguria2.jpg" />
     <Content Include="Content\Img\liguria3.jpg" />
     <Content Include="Content\Img\liguriabox.jpg" />
     <Content Include="Content\Img\logo.jpeg" />
+    <Content Include="Content\Img\Michelepirata.jpg" />
+    <Content Include="Content\Img\michelino.jpg" />
+    <Content Include="Content\Img\michellazzo.jpg" />
+    <Content Include="Content\Img\michelone.jpg" />
     <Content Include="Content\Img\museo_auto.jpg" />
     <Content Include="Content\Img\museo_auto1.jpg" />
     <Content Include="Content\Img\museo_auto2.jpg" />
@@ -178,6 +188,10 @@
     <Content Include="Content\Img\parigi1.jpg" />
     <Content Include="Content\Img\parigi2.jpg" />
     <Content Include="Content\Img\parigi3.jpg" />
+    <Content Include="Content\Img\puccio1.jpg" />
+    <Content Include="Content\Img\puccio2.jpg" />
+    <Content Include="Content\Img\puccione.jpg" />
+    <Content Include="Content\Img\puciadores.jpg" />
     <Content Include="Content\Img\puglia.jpg" />
     <Content Include="Content\Img\puglia1.jpg" />
     <Content Include="Content\Img\puglia2.jpg" />
@@ -202,6 +216,9 @@
     <Content Include="Content\Img\sicilia_storia1.jpg" />
     <Content Include="Content\Img\sicilia_storia2.jpg" />
     <Content Include="Content\Img\sicilia_storia3.jpg" />
+    <Content Include="Content\Img\solabros.jpg" />
+    <Content Include="Content\Img\stefanino.jpg" />
+    <Content Include="Content\Img\steftesla.jpg" />
     <Content Include="Content\Img\supercar.jpg" />
     <Content Include="Content\Img\svizzera.jpg" />
     <Content Include="Content\Img\svizzera1.jpg" />
@@ -295,7 +312,6 @@
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site1.Master" />
-    <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="admin\Admin.aspx.cs">
