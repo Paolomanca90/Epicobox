@@ -14,6 +14,10 @@ namespace Epicobox
         int quantity = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["User"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
             Label1.Visible = false;
             if (Session["Carrello"] != null)
             {
@@ -38,6 +42,7 @@ namespace Epicobox
             }
             else
             {
+                Button2.Visible = false;
                 header.Visible = false;
                 lblCart.Visible = true;
             }
@@ -135,6 +140,19 @@ namespace Epicobox
 
                 }
             }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Session["Carrello"] = null;
+            totale = 0;
+            totaleCarrello.InnerHtml = totale.ToString("C");
+            Label2.Visible = true;
+            header.Visible = false;
+            Button2.Visible = false;
+            Repeater1.Visible = false;
+            lblCart.Visible = true;
+            Label1.Visible = false;
         }
     }
 }

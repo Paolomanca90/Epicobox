@@ -88,7 +88,21 @@ namespace Epicobox
             {
                 carrello = new List<Prodotto>();
             }
-            carrello.Add(prodottoScelto);
+            bool prodottoPresente = false;
+            foreach(Prodotto prodotto in carrello)
+            {
+                if(prodotto.IdEsperienza == prodottoScelto.IdEsperienza)
+                {
+                    prodotto.Quantity += prodottoScelto.Quantity;
+                    prodotto.Prezzo += prodottoScelto.Prezzo;
+                    prodottoPresente = true;
+                    break;
+                }
+            }
+            if(!prodottoPresente)
+            {
+                carrello.Add(prodottoScelto);
+            }
             Session["Carrello"] = carrello;
             Label1.Visible = true; 
         }

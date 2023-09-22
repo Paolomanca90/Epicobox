@@ -76,8 +76,59 @@
 
         <div class="d-flex justify-content-between py-3 text">
             <h5 class="fs-3">Totale <span runat="server" id="totaleCarrello">€ 0,00</span></h5>
-            <asp:Button class="btn btn-danger" ID="Button1" runat="server" Text="svuota carrello" OnClick="Button1_Click" />
+            <div >
+                <asp:Label ID="Label2" visible="false" class="d-block my-5 fs-6 fw-bold text-center mx-auto   rounded-pill text text-bg-success" runat="server" Text="Grazie per il tuo ordine"></asp:Label>
+            </div>
+            <div>
+                <asp:Button class="btn btn-primary me-3" ID="Button2" runat="server" Text="Concludi l'acquisto" OnClick="Button2_Click" />
+                <asp:Button class="btn btn-danger" ID="Button1" runat="server" Text="Svuota carrello" OnClick="Button1_Click" />
+            </div>
         </div>
-           
+                       <footer id="footerr" class="footer-distributed position-absolute bottom-0">
+  <div class="footer-left">
+    <h3>Gift<span>-X</span></h3>
+
+    <p class="footer-links">
+      <a href="#" class="link-1">Home</a>
+
+      <a href="#">Blog</a>
+
+      <a href="#">Pricing</a>
+
+      <a href="#">About</a>
+
+      <a href="#">Faq</a>
+
+      <a href="#">Contact</a>
+    </p>
+
+    <p class="footer-company-name">Gift-X © 2023</p>
+  </div>
+
+  <div class="footer-center">
+    <div>
+      <i class="fa fa-map-marker"></i>
+      <p><span>Sottoscala, 4 Private Drive</span> Londra, Inghilterra</p>
+    </div>
+
+    <div>
+      <i class="fa fa-phone"></i>
+      <p>+39 333.1112223</p>
+    </div>
+
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="mailto:support@company.com">support@giftx.com</a></p>
+    </div>
+  </div>
+
+  <div class="footer-right">
+    <p class="footer-company-about">
+      <span>Chi siamo</span>
+            <hr>
+      Paolo Manca, <br /> Federico Maso,<br /> Erica Diana, <br />Raffaele Iannello, <br />Simone Potenza 
+    </p>
+  </div>
+</footer>
     </section>
 </asp:Content>
