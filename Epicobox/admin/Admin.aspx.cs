@@ -76,17 +76,6 @@ namespace Epicobox
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "select * from Esperienze WHERE IdEsperienza=@id";
-            SqlDataReader sqlreader;
-            sqlreader = cmd.ExecuteReader();
-            while (sqlreader.Read())
-            {
-                imagebox = sqlreader["ImageBox"].ToString();
-                image1 = sqlreader["Image1"].ToString();
-                image2 = sqlreader["Image2"].ToString();
-                image3 = sqlreader["Image3"].ToString();
-                image4 = sqlreader["Image4"].ToString();
-            }
             cmd.CommandText = "INSERT INTO Esperienze Values ( @Nome, @Categoria, @Prezzo, @DescrizioneBreve, @DescrizioneLunga, @ImageBox, @Image1, @Image2, @Image3, @Image4, @Location, @DataInizio, @DataFine ) ";
             cmd.Parameters.AddWithValue("Nome", nomeEsperienza.Text);
             cmd.Parameters.AddWithValue("Categoria", DropDownList2.SelectedItem.Value);
@@ -276,7 +265,7 @@ namespace Epicobox
 
             conn.Close();
 
-            Response.Redirect(Request.RawUrl);
+            Response.Redirect("../Default.aspx");
         }
     }
 }
