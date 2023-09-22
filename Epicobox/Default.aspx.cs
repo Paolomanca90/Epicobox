@@ -17,7 +17,7 @@ namespace Epicobox
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionDB"].ConnectionString.ToString();
             SqlConnection conn = new SqlConnection(connectionString);
 
-            SqlCommand cmd = new SqlCommand("select IdEsperienza, Nome, DescrizioneBreve, Prezzo, ImageBox, NomeLocation from Esperienze INNER JOIN Location ON Esperienze.Location = Location.IdLocation" , conn);
+            SqlCommand cmd = new SqlCommand("select IdEsperienza, Nome, DescrizioneBreve, Prezzo, ImageBox, NomeLocation from Esperienze INNER JOIN Location ON Esperienze.Location = Location.IdLocation ", conn);
             SqlDataReader sqlDataReader;
 
             conn.Open();
@@ -39,6 +39,22 @@ namespace Epicobox
             }
             Repeater1.DataSource = esperienze;
             Repeater1.DataBind();
+            conn.Close();
+            cmd = new SqlCommand("select * from Categoria", conn);
+            conn.Open();
+
+            List<Prodotto> categorie = new List<Prodotto>();
+            sqlDataReader = cmd.ExecuteReader();
+
+            while (sqlDataReader.Read())
+            {
+                Prodotto categoria = new Prodotto();
+                categoria.Categoria = sqlDataReader["NomeCategoria"].ToString();
+                categorie.Add(categoria);
+
+            }
+            Repeater2.DataSource = categorie;
+            Repeater2.DataBind();
         }
     }
 

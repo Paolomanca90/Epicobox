@@ -11,17 +11,17 @@ namespace Epicobox
 {
 
 
-    public partial class Default
+    public partial class Category
     {
 
         /// <summary>
-        /// Controllo Repeater2.
+        /// Controllo Category.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Category;
 
         /// <summary>
         /// Controllo Repeater1.

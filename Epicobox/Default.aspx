@@ -24,7 +24,19 @@
      Esplora il mondo con Gift-X e immergiti in esperienze straordinarie in Italia, Europa e oltre. <br />Scopri avventure culinarie, culturali e di intrattenimento senza confini. <br /> Ogni giorno è un viaggio da vivere con passione e scoperta su Gift-X, dove le esperienze diventano ricordi indimenticabili.
  </p></div>
        <hr />
-        <div class="text text-center fs-1">Scegli la tua Xperience</div>
+        
+        <div class="container-fluid pt-4">
+    <div class="row justify-content-evenly ">
+        <asp:Repeater ID="Repeater2" runat="server" ItemType="Epicobox.Prodotto">
+            <ItemTemplate>
+                <div class="col-1 text-center d-flex align-items-center">
+                    <a class="btn btn-outline-secondary rounded-pill" style="font-size: 12px" href="Category.aspx?Categoria=<%# Item.Categoria %>"><%# Item.Categoria %></a>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
+    </div>
+            <div class="text text-center fs-1 py-5">Scegli la tua Xperience</div>
+</div>
         <div class="container-fluid">
             <div class="row gap-2 justify-content-evenly ">
                 <asp:Repeater ID="Repeater1" runat="server" ItemType="Epicobox.Prodotto">
