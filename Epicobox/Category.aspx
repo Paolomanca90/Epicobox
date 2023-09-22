@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
        <section class="home">
-       <div id="Category" runat="server" class="text text-center fs-1">La tua selezione</div>
+       <div class="text text-center fs-1">La tua selezione</div>
        <div class="container-fluid">
            <div class="row gap-2 justify-content-evenly ">
                <asp:Repeater ID="Repeater1" runat="server" ItemType="Epicobox.Prodotto">
