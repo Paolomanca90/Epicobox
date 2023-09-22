@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -13,8 +14,15 @@ namespace Epicobox
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
+
+
             if (!IsPostBack)
             {
+               
+
+
                 if ((string)Session["User"] != "Admin")
                 {
                     Session["User"] = null;
@@ -46,11 +54,16 @@ namespace Epicobox
                     conn.Close();
                     aggiungi.Visible = false;
                 }
+
                 else
                 {
                     modifica.Visible = false;
                     elimina.Visible = false;
                 }
+            }
+            else
+            {
+                Label2.Visible = true;
             }
         }
 
@@ -234,7 +247,8 @@ namespace Epicobox
 
             cmd.ExecuteNonQuery();
                 Response.Write("Modifica effettuata");
-        }
+               
+            }
             catch
             {
                 Response.Write("Modifica non riuscita");
@@ -242,10 +256,9 @@ namespace Epicobox
             finally
             {
                 conn.Close();
-
+                
                 Response.Redirect(Request.RawUrl);
             }
-            
 
         }
 
