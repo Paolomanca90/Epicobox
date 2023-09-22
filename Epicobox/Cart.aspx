@@ -85,7 +85,7 @@
             </div>
         </div>
                        <footer id="footerr" class="footer-distributed position-absolute bottom-0">
-  <div class="footer-left">
+  <div class="footer-left ">
     <h3>Gift<span>-X</span></h3>
 
     <p class="footer-links">
@@ -122,13 +122,22 @@
     </div>
   </div>
 
-  <div class="footer-right">
-    <p class="footer-company-about">
-      <span>Chi siamo</span>
-            <hr>
-      Paolo Manca, <br /> Federico Maso,<br /> Erica Diana, <br />Raffaele Iannello, <br />Simone Potenza 
-    </p>
-  </div>
+                   <div class="footer-right">
+  <p class="footer-company-about">
+      <h5>Progetto BuildWeek Epicode</h5>
+    <h5>Chi siamo</h5>
+         <hr> <i class="fab fa-linkedin"></i>
+    <a class="anchor ms-1" href="https://www.linkedin.com/in/paolo-manca-developer/" target="_blank"> Paolo Manca </a>  <br />
+      <i class="fab fa-linkedin"></i>
+     <a class="anchor ms-1" href="https://www.linkedin.com/in/federico-maso-full-stack-developer/" target="_blank"> Federico Maso </a> <br />
+      <i class="fab fa-linkedin"></i>
+      <a class="anchor ms-1" href="https://www.linkedin.com/in/erica-diana-full-stack-developer/" target="_blank"> Erica Diana </a> <br />
+      <i class="fab fa-linkedin"></i>
+      <a class="anchor ms-1" href="https://www.linkedin.com/in/raffaeleianniello-webdeveloper/" target="_blank"> Raffaele Iannello </a>  <br />
+      <i class="fab fa-linkedin"></i>
+      <a class="anchor ms-1" href="https://www.linkedin.com/in/simone-potenza-front-end-developer/" target="_blank"> Simone Potenza </a> <br />
+  </p>
+</div>
 </footer>
     </section>
 </asp:Content>
