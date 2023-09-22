@@ -21,19 +21,22 @@ namespace Epicobox
         {
             string connection = ConfigurationManager.ConnectionStrings["ConnectionDB1"].ConnectionString.ToString();
             SqlConnection conn = new SqlConnection(connection);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Utenti WHERE Username = @Username", conn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Utenti WHERE Username = @Username and Password = @Password" , conn);
             cmd.Parameters.AddWithValue("Username", LoginUsername.Text);
+            cmd.Parameters.AddWithValue("Password", LoginPassword.Text);
             conn.Open();
             SqlDataReader sqlreader;
             sqlreader = cmd.ExecuteReader();
             string username = "";
+            string password = "";
             while (sqlreader.Read())
             {
                 username = sqlreader["Username"].ToString();
+                password = sqlreader["Password"].ToString();
             }
 
             conn.Close();
-            if(username != "")
+            if(username != "" && password != "" )
             {
                 Session["User"] = username;
                 Response.Redirect("Default.aspx");
