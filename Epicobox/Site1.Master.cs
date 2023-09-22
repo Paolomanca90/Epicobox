@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.FriendlyUrls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,15 @@ namespace Epicobox
         {
             if (!IsPostBack)
             {
+                if (Session["User"] != null)
+                {
+                    Logout.Visible = true;
+                }
+                else
+                {
+                    Login.Visible = true;
+                }
+
                 if ((string)Session["User"] == "Admin")
                 {
                     Admin.Visible = true;
@@ -23,6 +33,12 @@ namespace Epicobox
                 }
             }
 
+        }
+
+        protected void Logout_Click(object sender, EventArgs e)
+        {
+            Session["User"] = null;
+            Response.Redirect("Login.aspx");
         }
     }
 }

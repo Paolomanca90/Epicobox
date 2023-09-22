@@ -4,6 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"> 
     <section class="home">
+        <div class="text text-center pt-5 fs-1">Benvenuto su Gift Xperience</div>
      <div class="wrapper mx-auto my-5">
   <div class="title-text">
     <div class="title login">Accedi</div>

@@ -37,10 +37,10 @@
                 <div class="menu-bar">
                     <div class="menu">
 
-                        <li class="search-box">
+<%--                        <li class="search-box">
                             <i class='bx bx-search icon'></i>
                             <input type="text" placeholder="Cerca...">
-                        </li>
+                        </li>--%>
 
                         <ul class="menu-links p-0">
                             <li class="nav-link">
@@ -69,10 +69,14 @@
 
                     <div class="bottom-content">
                         <li class="">
-                            <a href="../Login.aspx">
+                            <a href="../Login.aspx" runat="server" id="Login" visible="false">
+                                <i class='bx bx-log-in icon'></i>
+                                <span class="text nav-text">Login</span>
+                            </a>
+                            <asp:LinkButton runat="server" id="Logout" visible="false" OnClick="Logout_Click">
                                 <i class='bx bx-log-out icon'></i>
                                 <span class="text nav-text">Logout</span>
-                            </a>
+                            </asp:LinkButton>
                         </li>
 
                         <li class="mode">
