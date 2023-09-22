@@ -106,6 +106,9 @@ namespace Epicobox
             }
         }
 
+
+    
+
         protected void Add_Click(object sender, EventArgs e)
         {
             LinkButton plus = (sender as LinkButton);
@@ -119,6 +122,7 @@ namespace Epicobox
                     prodotto.Prezzo += prezzoSingolo;
                     Session["Carrello"] = carrello;
                     totale += prezzoSingolo;
+                    
                     Response.Redirect(Request.RawUrl);
 
                 }

@@ -15,6 +15,11 @@ namespace Epicobox
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Label1.Visible = false;
+
+
+
+
                 string connection = ConfigurationManager.ConnectionStrings["ConnectionDB"].ConnectionString.ToString();
                 SqlConnection conn = new SqlConnection(connection);
                 SqlCommand cmd = new SqlCommand("SELECT Esperienze.*, NomeCategoria, NomeLocation FROM Esperienze " +
@@ -84,6 +89,7 @@ namespace Epicobox
             }
             carrello.Add(prodottoScelto);
             Session["Carrello"] = carrello;
+            Label1.Visible = true; 
         }
     }
 }

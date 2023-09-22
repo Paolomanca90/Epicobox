@@ -74,6 +74,6 @@
             <h5 class="fs-3">Totale <span runat="server" id="totaleCarrello">€ 0,00</span></h5>
             <asp:Button class="btn btn-danger" ID="Button1" runat="server" Text="svuota carrello" OnClick="Button1_Click" />
         </div>
-
+           
     </section>
 </asp:Content>

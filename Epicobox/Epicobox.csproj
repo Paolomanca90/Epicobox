@@ -122,6 +122,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\carousel.css" />
     <Content Include="Content\cssDefault.css" />
+    <Content Include="Content\footer.css" />
     <Content Include="Content\Img\alpi.jpg" />
     <Content Include="Content\Img\alpi1.jpg" />
     <Content Include="Content\Img\alpi2.jpg" />
