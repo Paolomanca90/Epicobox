@@ -108,7 +108,7 @@
   <div class="footer-center">
     <div>
       <i class="fa fa-map-marker"></i>
-      <p><span>Sottoscala, 4 Private Drive</span> Londra, Inghilterra</p>
+      <p><span>Sottoscala, 4 Private Drive</span> Little Whinging, Surrey</p>
     </div>
 
     <div>
