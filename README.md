@@ -1,11 +1,11 @@
 
 <div align="center">
-  <p align="center">
+  <h2 align="center">
     Gift-Xperience
     <br />
     <br />
     <a href="https://github.com/Paolomanca90/Gift-Xperience"><strong>Explore the docs »</strong></a>
-  </p>
+  </h2>
 </div>
 
 <br />
@@ -68,7 +68,7 @@ Everything you will see was developed by fully exploiting the power of ASP.NET a
   <br>
   <li>
     <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">
-    <img src="https://logovectorseek.com/wp-content/uploads/2019/10/bootstrap-logo-vector.png" alt="bootstrap"              width="100" height="20">
+    <img src="https://logovectorseek.com/wp-content/uploads/2019/10/bootstrap-logo-vector.png" alt="bootstrap"              width="100" height="40">
   </a>
   </li>
 </ul>
