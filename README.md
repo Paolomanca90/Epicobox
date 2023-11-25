@@ -72,8 +72,6 @@ Everything you will see was developed by fully exploiting the power of ASP.NET a
   </li>
 </ul>
 
-Also present in this project ChartJs, AlpineJs, AOS.
-
 <p align="right"><a href="#top">🔼</a></p>
 
 
