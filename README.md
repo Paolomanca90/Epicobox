@@ -65,10 +65,9 @@ Everything you will see was developed by fully exploiting the power of ASP.NET a
     <img src="https://logowik.com/content/uploads/images/3799-javascript.jpg" alt="js" width="60" height="40">
   </a>
   </li>
-  <br>
   <li>
     <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">
-    <img src="https://logovectorseek.com/wp-content/uploads/2019/10/bootstrap-logo-vector.png" alt="bootstrap"              width="100" height="40">
+    <img src="https://logovectorseek.com/wp-content/uploads/2019/10/bootstrap-logo-vector.png" alt="bootstrap"              width="100" height="60">
   </a>
   </li>
 </ul>
